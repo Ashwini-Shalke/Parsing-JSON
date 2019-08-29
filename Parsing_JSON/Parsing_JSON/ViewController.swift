@@ -8,13 +8,34 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+struct courses {
+    let id : Int
+    let name : String
+    let link : String
+    let imageURL  : String
+    let numberOfLesson : Int
+}
 
+class ViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let jsonURLString = "https://api.letsbuildthatapp.com/jsondecodable/course"
+        guard let url = URL(string: jsonURLString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            
+            guard let data = data else {return}
+            
+            let dataAsString = String(data: data, encoding: .utf8 )
+            
+            print (dataAsString)
+            
+            
+        }.resume()
     }
-
-
+    
+    
 }
 

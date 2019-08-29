@@ -23,17 +23,24 @@ class ViewController: UIViewController {
         
         let jsonURLString = "https://api.letsbuildthatapp.com/jsondecodable/course"
         guard let url = URL(string: jsonURLString) else { return }
-        
         URLSession.shared.dataTask(with: url) { (data, response, err) in
-            
             guard let data = data else {return}
             
-            let dataAsString = String(data: data, encoding: .utf8 )
+            // converting JSON data into String
+            //            let dataAsString = String(data: data, encoding: .utf8 )
+            // print (dataAsString)
+
+            // Swift 2/3 uses JSONSeriliazation
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options:.mutableContainers)
+                print(json)
+            } catch let jsonErr {
+                print("Error in JSON Serilization", jsonErr)
+            }
             
-            print (dataAsString)
             
             
-        }.resume()
+            }.resume()
     }
     
     

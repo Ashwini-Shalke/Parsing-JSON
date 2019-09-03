@@ -4,9 +4,9 @@ I have comented the JSONSerilization approach, just for reference in future. I k
 only reference I have kept it as it is.
 
 Table of Content:-
-What is JSON ?
-Steps to Parse JSON
-Various method to Parse JSON
+* What is JSON ?
+* Steps to Parse JSON
+* Various method to Parse JSON
 
 # What is JSON ?
 JSON is the most commonly used format to send and receive data from the web services. The data is in the form of key-value pairs. Using Swift Dictionaries we can easily fetch the values from the keys.

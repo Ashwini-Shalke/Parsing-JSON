@@ -15,28 +15,29 @@ JSON is the most commonly used format to send and receive data from the web serv
 * Create model object for your JSON.
 * To make request you create a data task of class URL sessionDataTask and you provide it with a URL and completeion handler.
 
-URLSessionDataTask :- Creates a task that retrieves the contents of a URL based on the specified URL request object, 
+### URLSessionDataTask 
+Creates a task that retrieves the contents of a URL based on the specified URL request object, 
 and calls a handler upon completion.
 
-## Parameters :- 
+## Parameters of URLSessionDataTask
 
-request :- 
-A URL request object that provides the URL, cache policy, request type, body data or body stream, and so on.
+1. request :- 
+      A URL request object that provides the URL, cache policy, request type, body data or body stream, and so on.
 
-completionHandler :- 
-The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
-  If you pass nil, only the session delegate methods are called when the task completes, making this method equivalent to the dataTask(with:) method.
+2. completionHandler :- 
+     The completion handler to call when the load request is complete. This handler is executed on the delegate queue.
+        If you pass nil, only the session delegate methods are called when the task completes, making this method equivalent                  to the dataTask(with:) method.
 
 This completion handler takes the following parameters:
 
-### data
-The data returned by the server.
+1. data
+    The data returned by the server.
 
-### response
-An object that provides response metadata, such as HTTP headers and status code. If you are making an HTTP or HTTPS request, the returned object is actually an HTTPURLResponse object.
+2. response
+    An object that provides response metadata, such as HTTP headers and status code. If you are making an HTTP or HTTPS            request, the returned object is actually an HTTPURLResponse object.
 
-### error
-An error object that indicates why the request failed, or nil if the request was successful.
+3. error
+    An error object that indicates why the request failed, or nil if the request was successful.
 
 After you create the task, you must start it by calling its resume() method.
 
